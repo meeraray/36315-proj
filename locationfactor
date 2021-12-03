@@ -1,0 +1,6 @@
+customers$location <- ifelse(customers$NumCatalogPurchases > customers$NumStorePurchases & 
+                               customers$NumCatalogPurchases > customers$NumWebPurchases, "catalog",
+                      ifelse(customers$NumWebPurchases > customers$NumStorePurchases & 
+                               customers$NumWebPurchases > customers$NumCatalogPurchases, "web", 
+                      ifelse(customers$NumStorePurchases > customers$NumWebPurchases & 
+                               customers$NumStorePurchases > customers$NumCatalogPurchases, "store", "equal" )))
